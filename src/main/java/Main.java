@@ -41,5 +41,10 @@ public class Main {
     ObjectInputStream inputStream1 = new ObjectInputStream(new FileInputStream("pizza1.ser"));
     Pizza pizza = (Pizza) inputStream1.readObject();
     System.out.println(pizza.toString());
+
+    Gson gson1 = new Gson();
+    String jsonString1 = gson1.toJson(pizza);
+    File file1 = new File("pizza1.json");
+    Files.write(Paths.get("pizza1.json"),jsonString1.getBytes());
   }
 }
