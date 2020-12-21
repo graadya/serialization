@@ -2,10 +2,13 @@ import java.io.Serializable;
 
 public class Dough implements Serializable {
 
-   public String size = "30";
-   public String type = "classic";
+   public String size;
+   public String type;
 
-
+  public Dough(String size, String type) {
+    this.size = size;
+    this.type = type;
+  }
 
   @Override
     public String toString() {
